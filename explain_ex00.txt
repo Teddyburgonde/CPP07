@@ -1,7 +1,0 @@
-mplémente les modèles de fonction suivants :
-
-    swap : Permute les valeurs de deux arguments donnés. Ne retourne rien.
-    min : Compare les deux valeurs passées en arguments et retourne la plus petite. Si les deux valeurs sont égales, elle retourne la deuxième.
-    max : Compare les deux valeurs passées en arguments et retourne la plus grande. Si les deux valeurs sont égales, elle retourne la deuxième.
-
-Ces fonctions peuvent être appelées avec n'importe quel type d'argument. La seule exigence est que les deux arguments soient du même type et qu'ils supportent tous les opérateurs de comparaison.
