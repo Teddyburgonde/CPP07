@@ -6,68 +6,25 @@
 /*   By: teddybandama <teddybandama@student.42.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/04 22:19:16 by teddybandam       #+#    #+#             */
-/*   Updated: 2024/11/04 22:49:22 by teddybandam      ###   ########.fr       */
+/*   Updated: 2024/11/04 23:04:44 by teddybandam      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Whatever.hpp"
 
-int	main()
-{
-	{
-		std::string a;
-		std::string b;
-
-		a = "salut";
-		b = "aurevoir";
-
-		std::cout << "Function swap " << std::endl;
-		std::cout << std::endl;
-		std::cout << "Before, value of a: " << a << std::endl;
-		std::cout << "Before, value of b: " << b << std::endl;
-		swap(a, b);
-		std::cout << std::endl;
-		std::cout << "After, value of a: " << a << std::endl;
-		std::cout << "After, value of b: " << b << std::endl;
-
-		std::cout << "---------------------------------" << std::endl;
-		std::cout << std::endl;
-	}
-
-	{
-		int a;
-		int b;
-		int result;
-
-		a = 10;
-		b = 80;
-		
-		std::cout << "Function max : " << std::endl;
-		std::cout << std::endl;
-		std::cout << "Value of a: " << a << std::endl;
-		std::cout << "Value of b: " << b << std::endl;
-		result = max(a, b);
-		std::cout << "The highest value is " << result << std::endl;
-
-		std::cout << "---------------------------------" << std::endl;
-		std::cout << std::endl;
-	}
-
-	{
-		int a;
-		int b;
-		int result;
-
-		a = 10;
-		b = 50;
-		
-		std::cout << "Function min : " << std::endl;
-		std::cout << std::endl;
-		std::cout << "Value of a: " << a << std::endl;
-		std::cout << "Value of b: " << b << std::endl;
-		result = min(a, b);
-		std::cout << "The smallest value is  " << result << std::endl;
-		std::cout << "---------------------------------" << std::endl;
-		std::cout << std::endl;
-	}
+int main(void) 
+{ 
+	int a = 2;
+	int b = 3;
+	::swap(a,b);
+	std::cout << "a = " << a << ", b = " << b << std::endl;
+	std::cout << "min(a, b) = " << ::min( a, b ) << std::endl;
+	std::cout << "max(a, b) = " << ::max( a, b ) << std::endl;
+	std::string c = "chaine1";
+	std::string d = "chaine2";
+	::swap(c, d);
+	std::cout << "c = " << c << ", d = " << d << std::endl;
+	std::cout << "min(c, d) = " << ::min( c, d ) << std::endl;
+	std::cout << "max(c, d) = " << ::max( c, d ) << std::endl;
+	return 0; 
 }

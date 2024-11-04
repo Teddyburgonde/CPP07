@@ -1,19 +1,14 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Whatever.hpp                                       :+:      :+:    :+:   */
+/*   whatever.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: teddybandama <teddybandama@student.42.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/04 00:27:51 by teddybandam       #+#    #+#             */
-/*   Updated: 2024/11/04 22:31:56 by teddybandam      ###   ########.fr       */
+/*   Updated: 2024/11/04 23:02:48 by teddybandam      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-
-// min : Compare les deux valeurs passées en arguments et 
-// retourne la plus petite. 
-// Si les deux valeurs sont égales, elle retourne la deuxième.
 
 #ifndef WHATEVER_HPP
 # define WHATEVER_HPP
@@ -49,7 +44,7 @@ template <typename T>
 class Whatever
 {
     private:
-        T content; // contenu de la class
+        T content;
     public:
         Whatever(const T& item) : content(item) {}
         T getItem() const 
