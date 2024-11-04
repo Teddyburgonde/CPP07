@@ -1,0 +1,14 @@
+Implémente une fonction template appelée iter qui prend 3 
+paramètres et ne retourne rien.
+
+    Le premier paramètre est l'adresse d'un tableau.
+    Le deuxième paramètre est la longueur du tableau.
+    Le troisième paramètre est une fonction qui sera appelée 
+	sur chaque élément du tableau.
+
+Rends un fichier main.cpp qui contient tes tests. 
+Fournis suffisamment de code pour générer un exécutable de test.
+
+Ta fonction template iter doit fonctionner avec 
+n'importe quel type de tableau. Le troisième paramètre peut 
+être une fonction template instanciée.
