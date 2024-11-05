@@ -3,21 +3,24 @@
 /*                                                        :::      ::::::::   */
 /*   Iter.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: teddybandama <teddybandama@student.42.f    +#+  +:+       +#+        */
+/*   By: tebandam <tebandam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/05 05:21:06 by teddybandam       #+#    #+#             */
-/*   Updated: 2024/11/05 05:47:00 by teddybandam      ###   ########.fr       */
+/*   Updated: 2024/11/05 09:46:24 by tebandam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+
+#ifndef ITER_HPP
+# define ITER_HPP
 
 #include <iostream>
 
 template <typename T>
-void funct(T &)
+void funct(T &value)
 {
-	std::cout << T << std::endl;
+	std::cout << value;
 }
-
 
 template <typename T>
 void iter(T* array, int size, void(*func)(T&)) 
@@ -27,3 +30,6 @@ void iter(T* array, int size, void(*func)(T&))
 		func(array[i]);
 	}
 }
+
+
+#endif
