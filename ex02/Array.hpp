@@ -6,7 +6,7 @@
 /*   By: tebandam <tebandam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/05 10:02:21 by tebandam          #+#    #+#             */
-/*   Updated: 2024/11/05 11:43:10 by tebandam         ###   ########.fr       */
+/*   Updated: 2024/11/05 13:29:51 by tebandam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ class Array
 		~Array();
 	
 	public:
-		int	size();
+		unsigned int size() const;
 
 	private:
 		class OperatorHighException : public std::exception
@@ -34,6 +34,10 @@ class Array
             public:
                 const char* what() const throw();
         };
+	
+	private:
+		T* _array;
+		unsigned int	_size;
 };
 
 
