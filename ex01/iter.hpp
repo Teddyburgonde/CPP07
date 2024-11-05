@@ -1,29 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   iter.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tebandam <tebandam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/05 05:47:23 by teddybandam       #+#    #+#             */
-/*   Updated: 2024/11/05 10:00:58 by tebandam         ###   ########.fr       */
+/*   Created: 2024/11/05 09:59:24 by tebandam          #+#    #+#             */
+/*   Updated: 2024/11/05 10:00:50 by tebandam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "iter.hpp"
 
-int	main()
+#ifndef ITER_HPP
+# define ITER_HPP
+
+#include <iostream>
+
+template <typename T>
+void funct(T &value)
 {
-	{
-		int	array[] = {1, 2, 3};
-		iter(array, 3, funct);
-		std::cout << std::endl;
-	}
+	std::cout << value;
+}
 
+template <typename T>
+void iter(T* array, int size, void(*func)(T&)) 
+{
+    for(int i = 0; i < size; i++)
 	{
-		std::string array;
-
-		array = "salut";
-		iter(array.c_str(), array.size(), funct);
+		func(array[i]);
 	}
 }
+
+
+#endif

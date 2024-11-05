@@ -1,35 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Iter.hpp                                           :+:      :+:    :+:   */
+/*   Array.tpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tebandam <tebandam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/05 05:21:06 by teddybandam       #+#    #+#             */
-/*   Updated: 2024/11/05 09:46:24 by tebandam         ###   ########.fr       */
+/*   Created: 2024/11/05 12:14:56 by tebandam          #+#    #+#             */
+/*   Updated: 2024/11/05 12:15:00 by tebandam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "Array.hpp"
 
-#ifndef ITER_HPP
-# define ITER_HPP
+Array::Array(){}
+Array::Array(unsigned int n) : n(n){};
 
-#include <iostream>
 
-template <typename T>
-void funct(T &value)
+Array::Array(Array const &cpy)
 {
-	std::cout << value;
+	
 }
-
-template <typename T>
-void iter(T* array, int size, void(*func)(T&)) 
+Array Array::operator=(Array const &rhs)
 {
-    for(int i = 0; i < size; i++)
+	if (this != &rhs)
 	{
-		func(array[i]);
+		
 	}
+	return *this;
 }
 
+Array::~Array(){}
 
-#endif
+const char* Array::OperatorHighException::what() const throw()
+{
+	return "Operator tow low";
+}
