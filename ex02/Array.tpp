@@ -6,7 +6,7 @@
 /*   By: tebandam <tebandam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/05 12:14:56 by tebandam          #+#    #+#             */
-/*   Updated: 2024/11/05 14:00:28 by tebandam         ###   ########.fr       */
+/*   Updated: 2024/11/06 16:26:11 by tebandam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ Array::Array() : _array(NULL), _size(0)
 {
 	
 }
-Array::Array(unsigned int n) : _size(n)
+Array::Array(size_t n) : _size(n)
 {
 	if (n > 0)
 		_array = new T[n];
@@ -24,17 +24,27 @@ Array::Array(unsigned int n) : _size(n)
 		_array = NULL;
 }
 
-Array::Array(Array const &cpy) _array(NULL), _size(0)
+Array::Array(Array const &cpy) : _array(NULL), _size(0)
 {
-	_array = new T[n] = cpy._size;
-	_array[n] = cpy._size;
+	this->_size = cpy._size;
+	if (_size > 0)
+	{
+		this->_array = new T[cpy._size];
+		for(size_t i = 0; i < cpy._size; i++)
+			this->_array[i] = cpy._array[i]; 
+	}
 }
 
-Array Array::operator=(Array const &rhs)
+// ici ce n'est pas correct 
+Array& Array::operator=(Array const &rhs)
 {
 	if (this != &rhs)
 	{
-		this = array_rhs;
+		if (_array != NULL)
+		{
+			this = array_rhs;
+			this->_array = rhs.array;
+		}
 	}
 	return *this;
 }
@@ -44,13 +54,12 @@ Array::~Array()
 	delete[] _array;
 }
 
-unsigned int size::size() const
+size_t Array::size() const
 {
 	return (_size);
 }
 
-
 const char* Array::OperatorHighException::what() const throw()
 {
-	return "Operator tow low";
+	return "Operator too low";
 }

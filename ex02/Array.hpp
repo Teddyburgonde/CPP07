@@ -6,7 +6,7 @@
 /*   By: tebandam <tebandam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/05 10:02:21 by tebandam          #+#    #+#             */
-/*   Updated: 2024/11/05 13:29:51 by tebandam         ###   ########.fr       */
+/*   Updated: 2024/11/06 14:31:17 by tebandam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ class Array
 {
 	public:
 		Array();
-		Array(unsigned int n);
+		Array(size_t n);
 		Array(Array const &cpy);
 		Array operator=(Array const &rhs);
 		~Array();
@@ -37,7 +37,7 @@ class Array
 	
 	private:
 		T* _array;
-		unsigned int	_size;
+		size_t	_size;
 };
 
 
