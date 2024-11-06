@@ -6,17 +6,19 @@
 /*   By: tebandam <tebandam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/06 20:16:23 by tebandam          #+#    #+#             */
-/*   Updated: 2024/11/06 20:17:52 by tebandam         ###   ########.fr       */
+/*   Updated: 2024/11/06 21:02:28 by tebandam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Array.hpp"
 
-Array::Array() : _array(NULL), _size(0)
+template <typename T>
+Array<T>::Array() : _array(NULL), _size(0)
 {
 	
 }
-Array::Array(size_t n) : _size(n)
+template <typename T>
+Array<T>::Array(size_t n) : _size(n)
 {
 	if (n > 0)
 		_array = new T[n];
@@ -24,7 +26,8 @@ Array::Array(size_t n) : _size(n)
 		_array = NULL;
 }
 
-Array::Array(Array const &cpy) : _array(NULL), _size(0)
+template <typename T>
+Array<T>::Array(Array const &cpy) : _array(NULL), _size(0)
 {
 	this->_size = cpy._size;
 	if (_size > 0)
@@ -35,7 +38,8 @@ Array::Array(Array const &cpy) : _array(NULL), _size(0)
 	}
 }
 
-Array& Array::operator=(Array const &rhs)
+template <typename T>
+Array<T>& Array::operator=(Array const &rhs)
 {
 	
 	if (this != &rhs)
@@ -50,17 +54,20 @@ Array& Array::operator=(Array const &rhs)
 	return *this;
 }
 
-Array::~Array()
+template <typename T>
+Array<T>::~Array()
 {
 	delete[] _array;
 }
 
-size_t Array::size() const
+template <typename T>
+size_t Array<T>::size() const
 {
 	return (_size);
 }
 
-const char* Array::OperatorHighException::what() const throw()
+template <typename T>
+const char* Array<T>::OperatorHighException::what() const throw()
 {
 	return "Operator too low";
 }
