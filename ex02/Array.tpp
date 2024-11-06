@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: tebandam <tebandam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/05 12:14:56 by tebandam          #+#    #+#             */
-/*   Updated: 2024/11/06 16:26:11 by tebandam         ###   ########.fr       */
+/*   Created: 2024/11/06 20:16:23 by tebandam          #+#    #+#             */
+/*   Updated: 2024/11/06 20:17:52 by tebandam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,16 +35,17 @@ Array::Array(Array const &cpy) : _array(NULL), _size(0)
 	}
 }
 
-// ici ce n'est pas correct 
 Array& Array::operator=(Array const &rhs)
 {
+	
 	if (this != &rhs)
 	{
-		if (_array != NULL)
-		{
-			this = array_rhs;
-			this->_array = rhs.array;
-		}
+		if (_array)
+			delete[] _array;
+		_size = rhs._size;
+		this->_array = new T[rhs._size];
+		for(size_t i = 0; i < rhs._size; i++)
+			this->_array[i] = rhs._array[i]; 
 	}
 	return *this;
 }

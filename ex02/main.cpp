@@ -6,7 +6,17 @@
 /*   By: tebandam <tebandam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/05 10:02:17 by tebandam          #+#    #+#             */
-/*   Updated: 2024/11/05 10:02:18 by tebandam         ###   ########.fr       */
+/*   Updated: 2024/11/06 20:09:26 by tebandam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "Array.hpp"
+
+int	main()
+{
+	{
+		Array<int> array;
+		
+		std::cout << array.size() << std::endl;
+	}
+}
