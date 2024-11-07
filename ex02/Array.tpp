@@ -6,7 +6,7 @@
 /*   By: tebandam <tebandam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/06 20:16:23 by tebandam          #+#    #+#             */
-/*   Updated: 2024/11/07 07:31:04 by tebandam         ###   ########.fr       */
+/*   Updated: 2024/11/07 08:18:49 by tebandam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,6 +52,18 @@ Array<T>& Array::operator=(Array const &rhs)
 			this->_array[i] = rhs._array[i]; 
 	}
 	return *this;
+}
+
+//T			&operator[](std::size_t idx); /* Subscript operator */
+//		const T		&operator[](std::size_t idx) const; /* Subscript operator */
+
+T			&Array::operator[](std::size_t idx)
+{
+	if (idx >= size())
+	{
+		throw ArrayException();
+	}
+	return (_array[idx]);
 }
 
 template <typename T>
