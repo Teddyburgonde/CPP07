@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tebandam <tebandam@student.42.fr>          +#+  +:+       +#+        */
+/*   By: teddybandama <teddybandama@student.42.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/05 10:02:17 by tebandam          #+#    #+#             */
-/*   Updated: 2024/11/07 09:01:01 by tebandam         ###   ########.fr       */
+/*   Updated: 2024/11/07 11:25:44 by teddybandam      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,38 @@
 
 int	main()
 {
+	/* Test for acces and change value of array of int */
 	{
-		Array<int>array(10);
+		try
+		{
+			Array<int>array(10);
 
-		array[0] = 0;
+			array[0] = 5;
+			array[1] = 8;
+			std::cout << array[0] << std::endl;
+			std::cout << array[1] << std::endl;		
+		}
+		catch(const std::exception &e)
+		{
+			std::cerr << e.what() << '\n';
+		}
 		
-		
-		
-		std::cout << array.size() << std::endl;
 	}
+	/* Test for Arrayexception  */
+	{
+		try
+		{
+			Array<int>array(10);
+
+			array[11];
+		}
+		catch(const std::exception &e)
+		{
+			std::cerr << e.what() << '\n';
+		}
+	}
+	
+	
+	
+	// std::cout << array.size() << std::endl;
 }

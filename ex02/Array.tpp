@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Array.tpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tebandam <tebandam@student.42.fr>          +#+  +:+       +#+        */
+/*   By: teddybandama <teddybandama@student.42.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/06 20:16:23 by tebandam          #+#    #+#             */
-/*   Updated: 2024/11/07 08:18:49 by tebandam         ###   ########.fr       */
+/*   Updated: 2024/11/07 11:11:47 by teddybandam      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ Array<T>::Array(Array const &cpy) : _array(NULL), _size(0)
 }
 
 template <typename T>
-Array<T>& Array::operator=(Array const &rhs)
+Array<T>  &Array<T>::operator=(const Array &rhs)
 {
 	
 	if (this != &rhs)
@@ -56,8 +56,8 @@ Array<T>& Array::operator=(Array const &rhs)
 
 //T			&operator[](std::size_t idx); /* Subscript operator */
 //		const T		&operator[](std::size_t idx) const; /* Subscript operator */
-
-T			&Array::operator[](std::size_t idx)
+template <typename T>
+T			&Array<T>::operator[](std::size_t idx)
 {
 	if (idx >= size())
 	{

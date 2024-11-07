@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Array.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tebandam <tebandam@student.42.fr>          +#+  +:+       +#+        */
+/*   By: teddybandama <teddybandama@student.42.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/05 10:02:21 by tebandam          #+#    #+#             */
-/*   Updated: 2024/11/07 09:00:33 by tebandam         ###   ########.fr       */
+/*   Updated: 2024/11/07 11:10:55 by teddybandam      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,10 +28,10 @@ class Array
 		~Array();
 	
 	public: /* Method */
-		unsigned int size() const;
+		size_t size() const;
 
 	public:	/* Operator overloading */
-		Array operator=(Array const &rhs);
+		Array &operator=(Array const &rhs);
 		T			&operator[](std::size_t idx); /* Subscript operator */
 		//const T		&operator[](std::size_t idx) const; /* Subscript operator */
 

@@ -1,6 +1,6 @@
 int main() 
 {
-    // Première partie du test
+    Première partie du test
     {
         // Création d'un objet Array<int> avec 10 éléments
         Array<int> test(10);  
