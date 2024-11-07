@@ -1,14 +1,11 @@
-Implémente une fonction template appelée iter qui prend 3 
-paramètres et ne retourne rien.
+Développez un modèle de classe Array qui contient des éléments de type T et qui implémente les comportements et fonctions suivants :
 
-    Le premier paramètre est l'adresse d'un tableau.
-    Le deuxième paramètre est la longueur du tableau.
-    Le troisième paramètre est une fonction qui sera appelée 
-	sur chaque élément du tableau.
+    Construction sans paramètre : Crée un tableau vide.
+    Construction avec un entier non signé n comme paramètre : Crée un tableau de n éléments initialisés par défaut. Conseil : Essayez de compiler int *a = new int(); puis affichez *a.
+    Construction par copie et opérateur d'assignation : Dans les deux cas, modifier l'un ou l'autre des tableaux (l'original ou la copie) après la copie ne doit pas affecter l'autre tableau.
+    Vous DEVEZ utiliser l'opérateur new[] pour allouer de la mémoire. L'allocation préventive (allouer de la mémoire à l'avance) est interdite. Votre programme ne doit jamais accéder à de la mémoire non allouée.
+    Les éléments peuvent être accédés via l'opérateur de souscription : [ ].
+    Lors de l'accès à un élément avec l'opérateur [ ], si son index est hors limites, une exception de type std::exception doit être lancée.
+    Une fonction membre size() qui retourne le nombre d'éléments dans le tableau. Cette fonction membre ne prend aucun paramètre et ne doit pas modifier l'instance courante.
 
-Rends un fichier main.cpp qui contient tes tests. 
-Fournis suffisamment de code pour générer un exécutable de test.
-
-Ta fonction template iter doit fonctionner avec 
-n'importe quel type de tableau. Le troisième paramètre peut 
-être une fonction template instanciée.
+Comme d'habitude, assurez-vous que tout fonctionne comme prévu et soumettez un fichier main.cpp qui contient vos tests.

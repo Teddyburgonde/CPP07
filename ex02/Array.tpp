@@ -6,7 +6,7 @@
 /*   By: tebandam <tebandam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/06 20:16:23 by tebandam          #+#    #+#             */
-/*   Updated: 2024/11/06 21:02:28 by tebandam         ###   ########.fr       */
+/*   Updated: 2024/11/07 07:31:04 by tebandam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,7 +67,7 @@ size_t Array<T>::size() const
 }
 
 template <typename T>
-const char* Array<T>::OperatorHighException::what() const throw()
+const char* Array<T>::ArrayException::what() const throw()
 {
-	return "Operator too low";
+	return "Out of bounds access";
 }
