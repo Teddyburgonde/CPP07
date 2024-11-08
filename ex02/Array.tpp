@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Array.tpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: teddybandama <teddybandama@student.42.f    +#+  +:+       +#+        */
+/*   By: tebandam <tebandam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/06 20:16:23 by tebandam          #+#    #+#             */
-/*   Updated: 2024/11/07 11:11:47 by teddybandam      ###   ########.fr       */
+/*   Updated: 2024/11/08 10:27:29 by tebandam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,10 +44,12 @@ Array<T>  &Array<T>::operator=(const Array &rhs)
 	
 	if (this != &rhs)
 	{
-		if (_array)
+		if (_array && _array.size() != rhs.size())
+		{
 			delete[] _array;
-		_size = rhs._size;
-		this->_array = new T[rhs._size];
+			this->_array = new T[rhs._size];
+			_size = rhs._size;
+		}
 		for(size_t i = 0; i < rhs._size; i++)
 			this->_array[i] = rhs._array[i]; 
 	}
@@ -55,9 +57,19 @@ Array<T>  &Array<T>::operator=(const Array &rhs)
 }
 
 //T			&operator[](std::size_t idx); /* Subscript operator */
-//		const T		&operator[](std::size_t idx) const; /* Subscript operator */
 template <typename T>
 T			&Array<T>::operator[](std::size_t idx)
+{
+	if (idx >= size())
+	{
+		throw ArrayException();
+	}
+	return (_array[idx]);
+}
+
+//		const T		&operator[](std::size_t idx) const; /* Subscript operator */
+template <typename T>
+const T			&Array<T>::operator[](std::size_t idx) const 
 {
 	if (idx >= size())
 	{
@@ -82,4 +94,17 @@ template <typename T>
 const char* Array<T>::ArrayException::what() const throw()
 {
 	return "Out of bounds access";
+}
+
+template <typename T>
+std::ostream	&operator<<(std::ostream &out, const Array<T> &in)
+{
+	out << "Array size: " << in.size() << ", Array value: ";
+	for (size_t i = 0; i < in.size(); i++)
+	{
+		out << in[i];
+		if (i < in.size() - 1)
+			out << ", ";
+	}
+	return (out);
 }

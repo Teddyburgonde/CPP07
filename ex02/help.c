@@ -12,7 +12,7 @@ for (int i = 0; i < MAX_VAL; i++) // Boucle pour remplir les tableaux `numbers` 
     mirror[i] = value; // Stockage de la même valeur dans `mirror` pour avoir une copie exacte de `numbers`
 }
 
-// SCOPE
+// SCOPE JE SUIS ICI 
 {
     Array<int> tmp = numbers; // Utilisation de l'opérateur d'affectation pour créer `tmp` à partir de `numbers`
     Array<int> test(tmp); // Utilisation du constructeur de copie pour créer `test` en copiant `tmp`

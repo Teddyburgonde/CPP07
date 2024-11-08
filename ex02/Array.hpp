@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Array.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: teddybandama <teddybandama@student.42.f    +#+  +:+       +#+        */
+/*   By: tebandam <tebandam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/05 10:02:21 by tebandam          #+#    #+#             */
-/*   Updated: 2024/11/07 11:10:55 by teddybandam      ###   ########.fr       */
+/*   Updated: 2024/11/08 10:22:01 by tebandam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 #include <iostream>
 #include <exception>
-
+#include <cstdlib>
 
 /* Template definition */  
 template <typename T>
@@ -33,7 +33,7 @@ class Array
 	public:	/* Operator overloading */
 		Array &operator=(Array const &rhs);
 		T			&operator[](std::size_t idx); /* Subscript operator */
-		//const T		&operator[](std::size_t idx) const; /* Subscript operator */
+		const T		&operator[](std::size_t idx) const; /* Subscript operator */
 
 	private: /* Exception */
 		class ArrayException : public std::exception
@@ -48,7 +48,8 @@ class Array
 };
 
 template <typename T>
-std::ostream &operator <<(std::ostream &out, Array<T> &in);
+std::ostream &operator <<(std::ostream &out, const Array<T> &in);
+
 
 #include "Array.tpp"
 
