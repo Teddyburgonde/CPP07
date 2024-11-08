@@ -6,7 +6,7 @@
 /*   By: tebandam <tebandam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/06 20:16:23 by tebandam          #+#    #+#             */
-/*   Updated: 2024/11/08 10:27:29 by tebandam         ###   ########.fr       */
+/*   Updated: 2024/11/08 11:40:47 by tebandam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ Array<T>  &Array<T>::operator=(const Array &rhs)
 	
 	if (this != &rhs)
 	{
-		if (_array && _array.size() != rhs.size())
+		if (_array && _size != rhs.size())
 		{
 			delete[] _array;
 			this->_array = new T[rhs._size];

@@ -6,7 +6,7 @@
 /*   By: tebandam <tebandam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/05 10:02:17 by tebandam          #+#    #+#             */
-/*   Updated: 2024/11/08 10:24:37 by tebandam         ###   ########.fr       */
+/*   Updated: 2024/11/08 11:46:11 by tebandam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,8 +71,8 @@ int	main()
         		stock_number_rand = rand();
 				array[i] = stock_number_rand;
 				check_array[i] = stock_number_rand;
-				std::cout << array[i] << std::endl;
-				std::cout << check_array[i] << std::endl;
+				//std::cout << array[i] << std::endl;
+				//std::cout << check_array[i] << std::endl;
 			}
 		}
 		catch(const std::exception &e)
@@ -84,64 +84,14 @@ int	main()
 		{
 			Array<int> tmp = array;
 
-			std::cout << tmp << std::endl;
+			//std::cout << tmp << std::endl;
 		}
-		
+
+		/* test copy constructor */
+		{
+			Array<int> tmp(array);
+			//std::cout << tmp << std::endl;
+		}
+		delete[] check_array;
 	}
-	// Array &operator=(Array const &rhs);
-
-
-
-
-
-	
-	// // SCOPE JE SUIS ICI 
-	// {
-    // Array<int> tmp = numbers; // Utilisation de l'opérateur d'affectation pour créer `tmp` à partir de `numbers`
-    // Array<int> test(tmp); // Utilisation du constructeur de copie pour créer `test` en copiant `tmp`
-	// }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-	
-	// std::cout << array.size() << std::endl;
 }
